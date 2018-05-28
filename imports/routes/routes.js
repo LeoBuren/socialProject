@@ -4,7 +4,7 @@ import {Router, Route, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import Signup from './../ui/Signup';
-import Dashboard from './../ui/Dashboard';
+import Dashboard from './../ui/Dashboard/Dashboard';
 import NotFound from './../ui/NotFound';
 import Login from './../ui/Login';
 
