@@ -13,7 +13,7 @@ class TwitterLoginForm extends React.Component {
   handleTwitterLogin = e => {
     e.preventDefault();
     Meteor.loginWithTwitter(
-      { requestOfflineToken: true },
+      { },
       err => {
         if (err) {
           this.setState({

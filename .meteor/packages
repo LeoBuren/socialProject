@@ -23,3 +23,6 @@ fourseven:scss
 accounts-ui
 accounts-twitter
 service-configuration
+autopublish
+accounts-facebook
+mikael:accounts-merge
