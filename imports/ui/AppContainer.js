@@ -1,6 +1,4 @@
 import React from 'react';
-import TwitterLoginForm from './TwitterLoginForm';
-import FacebookLoginForm from './FacebookLoginForm';
 import SocialLoginButton from './SocialLoginButton';
 
 class AppContainer extends React.Component {
@@ -13,6 +11,7 @@ class AppContainer extends React.Component {
     
     handleFacebookLogin = e => {
         e.preventDefault();
+        /*
         Meteor.loginWithFacebook(
           { requestPermissions: ['public_profile'] },
           err => {
@@ -24,12 +23,19 @@ class AppContainer extends React.Component {
               // TODO: SUCCESS
             }
           }
-        );
+        );*/
+       Meteor.signInWithFacebook ({}, function (error, mergedUserId) {
+            // mergedUsers is set if a merge occured
+            if (mergedUserId) {
+            console.log(mergedUserId, 'merged with', Meteor.userId());
+            }
+        });
     };
     
 
     handleTwitterLogin = e => {
         e.preventDefault();
+        /*
         Meteor.loginWithTwitter(
           { },
           err => {
@@ -41,7 +47,13 @@ class AppContainer extends React.Component {
                 //SUCCESS
             }
           }
-        );
+        );*/
+        Meteor.signInWithTwitter ({}, function (error, mergedUserId) {
+            // mergedUsers is set if a merge occured
+            if (mergedUserId) {
+            console.log(mergedUserId, 'merged with', Meteor.userId());
+            }
+        });
     };
 
     render() {
