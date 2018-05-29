@@ -25,3 +25,4 @@ service-configuration
 accounts-facebook
 mikael:accounts-merge
 react-meteor-data
+http
