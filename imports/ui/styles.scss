@@ -43,11 +43,11 @@ main {
 }
 
 .social-icon {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
     margin: auto;
     display: block;
-    width: 20%;
+    width: 40%;
     height: auto;
     filter: invert(100%);
 }
@@ -55,14 +55,23 @@ main {
 .py-3 {
     text-align: center;
     color: #fff;
+    margin-bottom:3rem!important;
 
     h2 {
-        font-size: 4rem;
+        font-size: 4vw;
     }
 
     .lead {
-        font-size: 2rem;
+        font-size: 2.3vw;
     }
+}
+
+.loginBtn {
+    padding: 2vw;
+    margin: auto;
+    width: 65%;
+    font-size: 2.4vw;
+    border-radius: 6px;
 }
 
 .form-signin {

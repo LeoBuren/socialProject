@@ -6,4 +6,8 @@ import './../imports/api/users';
 import './../imports/startup/simple-schema-configuration.js';
 
 Meteor.startup(() => {
+    Meteor.publish("userData", function () {
+        return Meteor.users.find({_id: this.userId});
+        this.ready();
+    });
 });

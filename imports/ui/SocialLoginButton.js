@@ -12,7 +12,7 @@ class SocialLoginButton extends React.Component {
 
   render() {
     return(
-      <button className="btn btn-lg btn-primary btn-block" onClick={this.props.func}>Sign in</button>
+      <button className="btn btn-outline-light loginBtn btn-lg btn-block" onClick={this.props.func}>Sign in</button>
     );
   }
 }
