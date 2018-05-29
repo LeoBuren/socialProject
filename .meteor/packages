@@ -26,3 +26,7 @@ accounts-facebook
 mikael:accounts-merge
 react-meteor-data
 http
+meteorhacks:npm
+
+
+npm-container

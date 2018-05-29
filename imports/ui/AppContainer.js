@@ -11,7 +11,7 @@ class AppContainer extends React.Component {
     }
 
     checkForLoginTwitter = () => Meteor.user().services ? Meteor.user().services.twitter ? 
-        (<TwitterComponent currentUser={this.props.currentUser} />) : (
+        (<TwitterComponent currentUser={this.props.currentUser} tweets={this.props.tweets} />) : (
             <div className="signInContainer twitter">
                 <div className="socialContainer twitter">
                     <img className="social-icon" alt="twitter icon" src="https://image.flaticon.com/icons/svg/8/8800.svg" />
@@ -58,6 +58,8 @@ class AppContainer extends React.Component {
     handleTwitterLogin = e => {
         e.preventDefault();
         Meteor.signInWithTwitter ({}, function (error, mergedUserId) {
+            let twitter = this.props.currentUser.services.twitter;
+            Meteor.call('testFunc', twitter.accessToken, twitter.accessTokenSecret);
             // mergedUsers is set if a merge occured
             if (mergedUserId) {
             console.log(mergedUserId, 'merged with', Meteor.userId());
