@@ -77,6 +77,9 @@ class AppContainer extends React.Component {
             if (mergedUserId) {
             console.log(mergedUserId, 'merged with', Meteor.userId());
             }
+            if(error) {
+                console.log(error);
+            }
         });
     };
 
@@ -86,6 +89,9 @@ class AppContainer extends React.Component {
             // mergedUsers is set if a merge occured
             if (mergedUserId) {
             console.log(mergedUserId, 'merged with', Meteor.userId());
+            }
+            if(error) {
+                console.log(error);
             }
         });
     };
