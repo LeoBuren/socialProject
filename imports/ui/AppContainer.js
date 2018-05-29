@@ -17,7 +17,7 @@ class AppContainer extends React.Component {
                     <img className="social-icon" alt="twitter icon" src="https://image.flaticon.com/icons/svg/8/8800.svg" />
                     <div className="my-3 py-3">
                         <h2 className="display-5">Sign in using Twitter</h2>
-                        <p className="lead">And an even wittier subheading.</p>
+                        <p className="lead">Links your account with Twitter</p>
                     </div>
                     <SocialLoginButton func={this.handleTwitterLogin} />
                 </div>
@@ -32,7 +32,7 @@ class AppContainer extends React.Component {
                 <img className="social-icon" alt="facebook icon" src="https://image.flaticon.com/icons/svg/23/23730.svg" />
                 <div className="my-3 py-3">
                     <h2 className="display-5">Sign in using Facebook</h2>
-                    <p className="lead">And an even wittier subheading.</p>
+                    <p className="lead">Links your account with Facebook</p>
                 </div>
                 <SocialLoginButton func={this.handleFacebookLogin} />
             </div>
@@ -58,8 +58,6 @@ class AppContainer extends React.Component {
     handleTwitterLogin = e => {
         e.preventDefault();
         Meteor.signInWithTwitter ({}, function (error, mergedUserId) {
-            let twitter = this.props.currentUser.services.twitter;
-            Meteor.call('testFunc', twitter.accessToken, twitter.accessTokenSecret);
             // mergedUsers is set if a merge occured
             if (mergedUserId) {
             console.log(mergedUserId, 'merged with', Meteor.userId());

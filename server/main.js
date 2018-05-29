@@ -28,7 +28,7 @@ Meteor.startup(() => {
 
 
     Meteor.methods({
-        'testFunc': function(accessToken, accessTokenSecret, tweetCollection) {
+        'getTwitterFeed': function(accessToken, accessTokenSecret, tweetCollection) {
             TwitMaker = Npm.require('twit');
 
             const T = new TwitMaker({
@@ -38,14 +38,18 @@ Meteor.startup(() => {
             access_token_secret:  accessTokenSecret
             });
 
-            T.get('search/tweets', { q: 'banana since:2011-07-11', count: 1 }, function(err, data, response) {
+            T.get('statuses/home_timeline', { count: 100 }, function(err, data, response) {
+                if(err) {
+                    console.log(err);
+                }
+
                 Tweets.rawCollection().insert({data: data});
             });
         }
     })
 
     Meteor.publish("Tweets", function() {
-        return Tweets.find();
+        return Tweets.find({}, { sort: {$natural: -1}, limit: 1});
         this.ready();
     })
 
