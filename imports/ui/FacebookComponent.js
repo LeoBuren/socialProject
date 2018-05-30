@@ -20,7 +20,7 @@ class FacebookComponent extends React.Component {
             <div className="socialContainer facebook socialComponentWrapper facebookBorder">
               <img className="social-media-icon-top facebook-icon" src="https://image.flaticon.com/icons/svg/23/23730.svg" />
               <div className="profile-picture-container">
-                <img className="profile-picture" src={"http://graph.facebook.com/" + facebook.id + "/picture/?type=large"} />
+                <img className="profile-picture" src={"https://graph.facebook.com/" + facebook.id + "/picture/?type=large"} />
               </div>
               <h2 className="text-center display-4">{facebook.name}</h2>
               <hr />

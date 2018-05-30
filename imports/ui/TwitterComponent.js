@@ -12,7 +12,7 @@ class TwitterComponent extends React.Component {
     };
 
     let twitter = this.props.currentUser.services.twitter;
-    //Meteor.call('getTwitterFeed', twitter.accessToken, twitter.accessTokenSecret);
+    Meteor.call('getTwitterFeed', twitter.accessToken, twitter.accessTokenSecret);
   }
 
   iterateTweets = () => {
@@ -34,7 +34,7 @@ class TwitterComponent extends React.Component {
 
   generateTweet = (i, data) => (
       <div className="media text-muted pt-3 twitterContainer">
-        <img className="mr-2 rounded" src={data[i].user.profile_image_url} alt="twitter profile picture" />
+        <img className="mr-2 rounded" src={data[i].user.profile_image_url_https} alt="twitter profile picture" />
         <p className="media-body pb-3 mb-0 large lh-125 border-bottom border-gray twitter-text">
           <strong className="d-block text-gray-dark">{data[i].user.screen_name}</strong>
           {data[i].text}
@@ -50,7 +50,7 @@ class TwitterComponent extends React.Component {
             <div className="socialContainer twitter socialComponentWrapper twitterBorder">
               <img className="social-media-icon-top" src="https://image.flaticon.com/icons/svg/8/8800.svg" />
               <div className="profile-picture-container">
-                <img className="profile-picture" src={twitter.profile_image_url} />
+                <img className="profile-picture" src={twitter.profile_image_url_https} />
               </div>
               <h2 className="text-center display-4">{twitter.screenName}</h2>
               <hr />
